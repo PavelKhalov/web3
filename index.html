@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Регистрация</h1>
+        <!-- Форма отправляется на текущий адрес (например, /cgi-bin/form.cgi) -->
+        <form action="/webBackend3/form.cgi" method="POST">
+            <label for="fio">ФИО:</label>
+            <input type="text" id="fio" name="fio" required>
+
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required pattern="^\+?[0-9]{10,15}$" title="Введите номер телефона в формате +9999999999">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="dob">Дата рождения:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label>Пол:</label>
+            <input type="radio" id="male" name="gender" value="Мужской" required>
+            <label for="male">Мужской</label>
+            <input type="radio" id="female" name="gender" value="Женский" required>
+            <label for="female">Женский</label>
+
+            <label for="languages">Любимый язык программирования:</label>
+            <select id="languages" name="languages[]" multiple required>
+                <option value="Pascal">Pascal</option>
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="PHP">PHP</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="Haskel">Haskel</option>
+                <option value="Clojure">Clojure</option>
+                <option value="Prolog">Prolog</option>
+                <option value="Scala">Scala</option>
+                <option value="Go">Go</option>
+            </select>
+
+            <label for="bio">Биография:</label>
+            <textarea id="bio" name="bio" rows="5" required></textarea>
+
+            <label>
+                <input type="checkbox" name="contract" required> С контрактом ознакомлен(а)
+            </label>
+
+            <button type="submit">Сохранить</button>
+        </form>
+    </div>
+</body>
+</html>
